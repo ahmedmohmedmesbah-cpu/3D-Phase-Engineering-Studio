@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D Phase Engineering Studio — 3D Portfolio Viewer</title>
+  <meta name="description" content="Rotate and zoom 3D projects directly in the browser. Free viewer using Three.js.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="" class="logo">
+      <span>3D Phase Engineering Studio</span>
+    </div>
+    <div class="actions">
+      <label class="btn">
+        <input id="fileInput" type="file" accept=".glb,.gltf,model/gltf-binary,model/gltf+json" hidden>
+        Open local .glb/.gltf
+      </label>
+      <button id="resetBtn" class="btn ghost" type="button">Reset view</button>
+      <a class="btn ghost" href="README.html" target="_blank" rel="noopener">Help</a>
+    </div>
+  </header>
+
+  <main id="viewer"></main>
+
+  <div class="hint" id="hint">
+    <strong>Tip:</strong> Upload a model named <code>models/project.glb</code> to this repository, or use the
+    <em>Open local</em> button above to view any .glb/.gltf file from your computer. If no model is found, a demo cube is shown.
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.156.1/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.156.1/examples/js/loaders/GLTFLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.156.1/examples/js/controls/OrbitControls.js"></script>
+  <script>
+    let scene, camera, renderer, controls;
+    let currentModel = null;
+
+    const container = document.getElementById('viewer');
+
+    function init() {
+      scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x0b1220);
+
+      camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.01, 2000);
+      camera.position.set(2.2, 1.4, 2.2);
+
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setPixelRatio(window.devicePixelRatio);
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.outputEncoding = THREE.sRGBEncoding;
+      container.appendChild(renderer.domElement);
+
+      // Lights
+      const hemi = new THREE.HemisphereLight(0xffffff, 0x404040, 1.1);
+      scene.add(hemi);
+
+      const dir = new THREE.DirectionalLight(0xffffff, 1);
+      dir.position.set(5, 10, 7);
+      scene.add(dir);
+
+      // Grid & floor
+      const grid = new THREE.GridHelper(10, 10, 0x3a3f4b, 0x2a2f3b);
+      grid.position.y = 0;
+      scene.add(grid);
+      const floor = new THREE.Mesh(
+        new THREE.PlaneGeometry(50, 50),
+        new THREE.MeshStandardMaterial({ color: 0x0e162b, roughness: 0.9, metalness: 0 })
+      );
+      floor.rotation.x = -Math.PI / 2;
+      floor.position.y = -0.0001;
+      scene.add(floor);
+
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.target.set(0, 0.5, 0);
+
+      window.addEventListener('resize', onWindowResize);
+      document.getElementById('resetBtn').addEventListener('click', () => frameScene(currentModel || scene));
+      document.getElementById('fileInput').addEventListener('change', onFileChosen);
+
+      // Try loading default model
+      loadGLB('models/project.glb').catch(() => {
+        addDemoCube();
+        showHint('No model found. Showing demo cube. Add models/project.glb to your repo or open a local file.');
+      });
+
+      animate();
+    }
+
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    function clearCurrentModel() {
+      if (!currentModel) return;
+      scene.remove(currentModel);
+      currentModel.traverse((obj) => {
+        if (obj.geometry) obj.geometry.dispose();
+        if (obj.material) {
+          if (Array.isArray(obj.material)) obj.material.forEach(m => m.dispose());
+          else obj.material.dispose();
+        }
+      });
+      currentModel = null;
+    }
+
+    function frameScene(target) {
+      let box = new THREE.Box3().setFromObject(target);
+      if (!isFinite(box.min.x) || !isFinite(box.max.x)) return;
+
+      const size = box.getSize(new THREE.Vector3());
+      const center = box.getCenter(new THREE.Vector3());
+      const maxDim = Math.max(size.x, size.y, size.z);
+      const fitDist = maxDim / (2 * Math.tan((Math.PI * camera.fov) / 360));
+      const dir = new THREE.Vector3().subVectors(camera.position, controls.target).normalize();
+
+      controls.target.copy(center);
+      camera.position.copy(center).addScaledVector(dir, fitDist * 1.8);
+      camera.near = maxDim / 100;
+      camera.far = maxDim * 100;
+      camera.updateProjectionMatrix();
+      controls.update();
+    }
+
+    async function loadGLB(url) {
+      return new Promise((resolve, reject) => {
+        const loader = new THREE.GLTFLoader();
+        loader.load(url, (gltf) => {
+          clearCurrentModel();
+          currentModel = gltf.scene;
+          scene.add(currentModel);
+          frameScene(currentModel);
+          hideHint();
+          resolve(gltf);
+        }, undefined, (err) => reject(err));
+      });
+    }
+
+    function onFileChosen(e) {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        const arrayBuffer = reader.result;
+        const loader = new THREE.GLTFLoader();
+        loader.parse(arrayBuffer, '', (gltf) => {
+          clearCurrentModel();
+          currentModel = gltf.scene;
+          scene.add(currentModel);
+          frameScene(currentModel);
+          hideHint();
+        }, (err) => {
+          showHint('Could not read this file as glTF/GLB.');
+          console.error(err);
+        });
+      };
+      reader.readAsArrayBuffer(file);
+    }
+
+    function addDemoCube() {
+      const group = new THREE.Group();
+      const geo = new THREE.BoxGeometry(1, 1, 1);
+      const mat = new THREE.MeshStandardMaterial({ color: 0x94a3b8, roughness: 0.4, metalness: 0.2 });
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.position.y = 0.5;
+      group.add(mesh);
+      scene.add(group);
+      currentModel = group;
+      frameScene(currentModel);
+    }
+
+    function showHint(text) {
+      const el = document.getElementById('hint');
+      if (text) el.innerText = text;
+      el.classList.add('show');
+    }
+
+    function hideHint() {
+      document.getElementById('hint').classList.remove('show');
+    }
+
+    init();
+  </script>
+</body>
+</html>
