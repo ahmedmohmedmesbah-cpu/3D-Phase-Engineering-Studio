@@ -8,14 +8,14 @@
     "description": "This project involved the complete mechanical design of a fire fighting hand tool. The model focuses on an ergonomic grip for user comfort and a robust assembly for reliability under high-pressure conditions. Designed in SolidWorks for manufacturing.",
     "tools": ["SolidWorks", "CAD Assembly"],
     "tags": ["industrial", "tooling", "safety"],
-    "cover": "images/fire fighting hand tool/fire fighting hand tool (4).png",
+    "cover": "public/images/fire fighting hand tool/fire fighting hand tool (4).png",
     "images": [
-      "images/fire fighting hand tool/fire fighting hand tool (1).png",
-      "images/fire fighting hand tool/fire fighting hand tool (2).png",
-      "images/fire fighting hand tool/fire fighting hand tool (3).png",
-      "images/fire fighting hand tool/fire fighting hand tool (4).png"
+      "public/images/fire fighting hand tool/fire fighting hand tool (1).png",
+      "public/images/fire fighting hand tool/fire fighting hand tool (2).png",
+      "public/images/fire fighting hand tool/fire fighting hand tool (3).png",
+      "public/images/fire fighting hand tool/fire fighting hand tool (4).png"
     ],
-    "model": "models/fire fighting hand tool.glb",
+    "model": "public/models/fire fighting hand tool.glb",
     "links": { "video": null, "github": null, "doc": null }
   },
   {
@@ -27,13 +27,13 @@
     "description": "This industrial design project showcases advanced surface modeling for a VR headset. The design prioritizes a minimalist aesthetic and an ergonomic fit, with a smooth, continuous visor and a comfortable strap system.",
     "tools": ["SolidWorks", "Surface Modeling", "Rendering"],
     "tags": ["vr", "industrial-design", "consumer-electronics"],
-    "cover": "images/glasses/glasses (2).png",
+    "cover": "public/images/glasses/glasses (2).png",
     "images": [
-      "images/glasses/glasses (1).png",
-      "images/glasses/glasses (2).png",
-      "images/glasses/glasses (3).png"
+      "public/images/glasses/glasses (1).png",
+      "public/images/glasses/glasses (2).png",
+      "public/images/glasses/glasses (3).png"
     ],
-    "model": "models/glasses.glb",
+    "model": "public/models/glasses.glb",
     "links": { "video": null, "github": null, "doc": null }
   },
   {
@@ -45,12 +45,12 @@
     "description": "A product design concept for a luxury perfume line. The model features a minimalist glass body contrasted with a sculpted, organic cap, created using advanced surfacing techniques in SolidWorks to achieve a premium look and feel.",
     "tools": ["SolidWorks", "Product Design", "Rendering"],
     "tags": ["luxury", "packaging", "cosmetics"],
-    "cover": "images/perfume bottle/perfume bottle (2).png",
+    "cover": "public/images/perfume bottle/perfume bottle (2).png",
     "images": [
-      "images/perfume bottle/perfume bottle (1).png",
-      "images/perfume bottle/perfume bottle (2).png"
+      "public/images/perfume bottle/perfume bottle (1).png",
+      "public/images/perfume bottle/perfume bottle (2).png"
     ],
-    "model": "models/perfume bottle.glb",
+    "model": "public/models/perfume bottle.glb",
     "links": { "video": null, "github": null, "doc": null }
   },
   {
@@ -62,12 +62,12 @@
     "description": "This design explores complex geometry and patterns for home decor. The pleated texture was meticulously modeled in SolidWorks, creating a visually striking piece that is optimized for fabrication technologies like 3D printing or molding.",
     "tools": ["SolidWorks", "CAD", "3D Printing"],
     "tags": ["decor", "product-design", "geometric"],
-    "cover": "images/pot/pot (2).png",
+    "cover": "public/images/pot/pot (2).png",
     "images": [
-      "images/pot/pot (1).png",
-      "images/pot/pot (2).png"
+      "public/images/pot/pot (1).png",
+      "public/images/pot/pot (2).png"
     ],
-    "model": "models/pot.glb",
+    "model": "public/models/pot.glb",
     "links": { "video": null, "github": null, "doc": null }
   },
   {
@@ -79,11 +79,11 @@
     "description": "This is a custom-designed enclosure for a Raspberry Pi camera. It includes precise cutouts for the lens and mounting points, ensuring a secure fit. The design balances protection with a minimal footprint, ideal for DIY electronics and prototyping.",
     "tools": ["SolidWorks", "CAD", "Prototyping"],
     "tags": ["electronics", "enclosure", "raspberry-pi"],
-    "cover": "images/rassbery camera/rassbery camera (1).png",
+    "cover": "public/images/rassbery camera/rassbery camera (1).png",
     "images": [
-      "images/rassbery camera/rassbery camera (1).png"
+      "public/images/rassbery camera/rassbery camera (1).png"
     ],
-    "model": "models/rassbery camera.glb",
+    "model": "public/models/rassbery camera.glb",
     "links": { "video": null, "github": null, "doc": null }
   },
   {
@@ -95,13 +95,13 @@
     "description": "Engineered to fit a Raspberry Pi and its touchscreen display, this enclosure provides robust protection while maintaining access to all necessary ports. The design includes honeycomb ventilation patterns for optimal thermal performance.",
     "tools": ["SolidWorks", "CAD", "DFM"],
     "tags": ["electronics", "enclosure", "raspberry-pi"],
-    "cover": "images/rassbery display/rassbery display (3).png",
+    "cover": "public/images/rassbery display/rassbery display (3).png",
     "images": [
-      "images/rassbery display/rassbery display (1).png",
-      "images/rassbery display/rassbery display (2).png",
-      "images/rassbery display/rassbery display (3).png"
+      "public/images/rassbery display/rassbery display (1).png",
+      "public/images/rassbery display/rassbery display (2).png",
+      "public/images/rassbery display/rassbery display (3).png"
     ],
-    "model": "models/rassbery display.glb",
+    "model": "public/models/rassbery display.glb",
     "links": { "video": null, "github": null, "doc": null }
   },
   {
@@ -113,12 +113,12 @@
     "description": "This project is a design for a standard server rack enclosure using sheet metal principles. It features ventilated side panels with a wood-accent aesthetic and a top-mounted fan cutout for superior thermal management, combining functionality with modern design.",
     "tools": ["SolidWorks", "Sheet Metal", "CAD"],
     "tags": ["industrial", "server", "data-center"],
-    "cover": "images/server rack/server rack (1).png",
+    "cover": "public/images/server rack/server rack (1).png",
     "images": [
-      "images/server rack/server rack (1).png",
-      "images/server rack/server rack (2).png"
+      "public/images/server rack/server rack (1).png",
+      "public/images/server rack/server rack (2).png"
     ],
-    "model": "models/server rack.glb",
+    "model": "public/models/server rack.glb",
     "links": { "video": null, "github": null, "doc": null }
   },
   {
@@ -130,14 +130,14 @@
     "description": "This mechanical assembly features a fully adjustable articulating arm designed for maximum flexibility and positioning. The exploded view showcases every component, including screws and covers, demonstrating a thorough understanding of mechanical assemblies and technical documentation.",
     "tools": ["SolidWorks", "Mechanical Assembly", "Technical Drawing"],
     "tags": ["assembly", "mechanical", "ergonomics"],
-    "cover": "images/table/table (4).png",
+    "cover": "public/images/table/table (4).png",
     "images": [
-      "images/table/table (1).png",
-      "images/table/table (2).png",
-      "images/table/table (3).png",
-      "images/table/table (4).png"
+      "public/images/table/table (1).png",
+      "public/images/table/table (2).png",
+      "public/images/table/table (3).png",
+      "public/images/table/table (4).png"
     ],
-    "model": "models/table.glb",
+    "model": "public/models/table.glb",
     "links": { "video": null, "github": null, "doc": null }
   },
   {
@@ -149,13 +149,13 @@
     "description": "A bespoke trophy design created to celebrate a fantasy football victory. The model features a prominent football topper, a sleek black base with engraved text, and a modern aesthetic, designed to be a premium award.",
     "tools": ["SolidWorks", "Rendering", "Product Design"],
     "tags": ["trophy", "custom-design", "award"],
-    "cover": "images/trophy/trophy (3).png",
+    "cover": "public/images/trophy/trophy (3).png",
     "images": [
-      "images/trophy/trophy (1).png",
-      "images/trophy/trophy (2).png",
-      "images/trophy/trophy (3).png"
+      "public/images/trophy/trophy (1).png",
+      "public/images/trophy/trophy (2).png",
+      "public/images/trophy/trophy (3).png"
     ],
-    "model": "models/trophy.glb",
+    "model": "public/models/trophy.glb",
     "links": { "video": null, "github": null, "doc": null }
   }
 ]
