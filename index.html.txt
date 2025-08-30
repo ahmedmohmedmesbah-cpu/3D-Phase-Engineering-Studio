@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed Mesbah — 3D Phase Engineering Studio</title>
+  <meta name="description" content="Portfolio of Ahmed Mesbah, Mechanical & SolidWorks Designer specializing in 3D modeling and engineering.">
+  <meta property="og:title" content="3D Phase Engineering Studio">
+  <meta property="og:description" content="Showcasing expertise in CAD, robotics, and product design.">
+  <meta property="og:image" content="images/social-preview.png">
+  <meta property="og:url" content="https://yourusername.github.io/portfolio/">
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ahmed Mesbah",
+    "jobTitle": "Mechanical & SolidWorks Designer",
+    "worksFor": {"@type": "Organization", "name": "3D Phase Engineering Studio"},
+    "url": "https://yourusername.github.io/portfolio/",
+    "email": "ahmedmohmedmesbah@gmail.com"
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="logo">Ahmed Mesbah — 3D Phase Engineering Studio</div>
+    <nav aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <a class="skip-to-content" href="#main">Skip to content</a>
+  <main id="main">
+    <section id="about" aria-labelledby="about-title">
+      <h1 id="about-title">About</h1>
+      <div class="about-content">
+        <p>I’m Ahmed — a Mechanical & SolidWorks Designer with a focus on 3D Modeling, CAD Assemblies, and Surface Modeling.</p>
+        <p>I specialize in bringing engineering ideas to life through precise designs, technical drawings, and manufacturing-ready documentation. With experience in robotics, product design, and prototyping, I bridge precision engineering with creative problem-solving.</p>
+        <p>Originally from Egypt, my background has shaped my approach to innovative design. Based in [Your Location], I'm always open to new collaborations. Feel free to reach out!</p>
+      </div>
+    </section>
+    <section id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience</h2>
+      <div class="experience-list">
+        <div class="experience-item">
+          <h3>3D Phase Engineering Studio</h3>
+          <p>Founder & Lead Designer</p>
+          <p>2023 to Now — ~2 Years</p>
+        </div>
+      </div>
+    </section>
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <div class="projects-grid"></div>
+    </section>
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact Me</h2>
+      <div class="direct-contact">
+        <p>Email: <a href="mailto:ahmedmohmedmesbah@gmail.com">ahmedmohmedmesbah@gmail.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/201002500273">+201002500273</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmed-mohmedmesbah-b35901259">Profile</a></p>
+      </div>
+      <p class="privacy-note">Contact details are used solely to respond to inquiries.</p>
+    </section>
+  </main>
+  <footer>© 2025 3D Phase Engineering Studio — Ahmed Mesbah</footer>
+  <script src="script.js"></script>
+</body>
+</html>
