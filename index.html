@@ -80,7 +80,7 @@
   <script type="text/babel">
     const { useState, useRef, useEffect, forwardRef } = React;
 
-    // --- Project Data (from data/projects.json) ---
+    // --- Project Data ---
     const projectsData = [
       {
         "id": "fire-fighting-tool",
@@ -243,7 +243,7 @@
       }
     ];
 
-    // --- From hooks/useOnScreen.ts ---
+    // --- Hooks ---
     function useOnScreen(ref, rootMargin = '0px') {
       const [isIntersecting, setIntersecting] = useState(false);
       useEffect(() => {
@@ -263,7 +263,7 @@
       return isIntersecting;
     }
 
-    // --- From components/Header.tsx ---
+    // --- Components ---
     const NavLink = ({ href, label, isCurrent }) => (
       <a
         href={href}
@@ -316,7 +316,6 @@
       );
     };
 
-    // --- From components/AboutSection.tsx ---
     const AboutSection = forwardRef((props, ref) => {
       const capabilities = [
         "3D modeling (parts/assemblies)", "SolidWorks surface modeling", "Technical drawings",
@@ -363,7 +362,6 @@
       );
     });
 
-    // --- From components/ProjectCard.tsx ---
     const ProjectCard = ({ project, onProjectSelect }) => {
       return (
         <div
@@ -399,7 +397,6 @@
       );
     };
 
-    // --- From components/ProjectModal.tsx ---
     const ThreeViewer = ({ modelUrl }) => {
       const mountRef = useRef(null);
 
@@ -530,9 +527,8 @@
       );
     };
 
-    // --- From components/ProjectsSection.tsx ---
     const ProjectsSection = forwardRef(({ onProjectSelect }, ref) => {
-      const projects = projectsData; // Use the data directly
+      const projects = projectsData;
 
       return (
         <section id="projects" ref={ref} className="py-20 lg:py-32">
@@ -553,7 +549,6 @@
       );
     });
     
-    // --- From components/ContactSection.tsx ---
     const ContactSection = forwardRef((props, ref) => {
       return (
         <section id="contact" ref={ref} className="py-20 lg:py-32 bg-muted">
@@ -600,7 +595,6 @@
       );
     });
 
-    // --- From components/Footer.tsx ---
     const Footer = () => {
       const currentYear = new Date().getFullYear();
       return (
@@ -612,7 +606,6 @@
       );
     };
 
-    // --- From App.tsx ---
     const App = () => {
       const [selectedProject, setSelectedProject] = useState(null);
       const aboutRef = useRef(null);
@@ -658,7 +651,6 @@
       );
     };
 
-    // --- From index.tsx ---
     const rootElement = document.getElementById('root');
     const root = ReactDOM.createRoot(rootElement);
     root.render(<App />);
