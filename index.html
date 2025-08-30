@@ -1,74 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ahmed Mesbah — 3D Phase Engineering Studio</title>
-  <meta name="description" content="Portfolio of Ahmed Mesbah, Mechanical & SolidWorks Designer specializing in 3D modeling and engineering.">
-  <meta property="og:title" content="3D Phase Engineering Studio">
-  <meta property="og:description" content="Showcasing expertise in CAD, robotics, and product design.">
-  <meta property="og:image" content="images/social-preview.png">
-  <meta property="og:url" content="https://yourusername.github.io/portfolio/">
-  <link rel="icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Ahmed Mesbah",
-    "jobTitle": "Mechanical & SolidWorks Designer",
-    "worksFor": {"@type": "Organization", "name": "3D Phase Engineering Studio"},
-    "url": "https://yourusername.github.io/portfolio/",
-    "email": "ahmedmohmedmesbah@gmail.com"
-  }
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Phase - Ahmed Mesbah</title>
+  <meta name="description" content="Portfolio of Ahmed Mesbah, a Mechanical & SolidWorks Designer and the founder of 3D Phase Engineering Studio. Specializing in 3D modeling, CAD, and manufacturing-ready documentation.">
+  <meta property="og:title" content="3D Phase - Ahmed Mesbah Portfolio">
+  <meta property="og:description" content="Showcasing expertise in 3D modeling, robotics, product design, and prototyping.">
+  <meta property="og:image" content="https://picsum.photos/1200/630">
+  <meta property="og:type" content="website">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    :root {
+      --color-bg: #FFFFFF;
+      --color-text: #1A1A1A;
+      --color-accent: #0A6BFF;
+      --color-muted: #F3F5F7;
+      --color-border: #E5E7EB;
+      --color-focus: #111827;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Poppins', 'sans-serif'],
+          },
+          colors: {
+            background: 'var(--color-bg)',
+            text: 'var(--color-text)',
+            accent: 'var(--color-accent)',
+            muted: 'var(--color-muted)',
+            border: 'var(--color-border)',
+          }
+        }
+      }
+    }
   </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+  <!-- Three.js for 3D Viewer -->
+  <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "three/": "https://aistudiocdn.com/three@^0.179.1/"
+  }
+}
+</script>
+
 </head>
-<body>
-  <header>
-    <div class="logo">Ahmed Mesbah — 3D Phase Engineering Studio</div>
-    <nav aria-label="Primary">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  <a class="skip-to-content" href="#main">Skip to content</a>
-  <main id="main">
-    <section id="about" aria-labelledby="about-title">
-      <h1 id="about-title">About</h1>
-      <div class="about-content">
-        <p>I’m Ahmed — a Mechanical & SolidWorks Designer with a focus on 3D Modeling, CAD Assemblies, and Surface Modeling.</p>
-        <p>I specialize in bringing engineering ideas to life through precise designs, technical drawings, and manufacturing-ready documentation. With experience in robotics, product design, and prototyping, I bridge precision engineering with creative problem-solving.</p>
-        <p>Originally from Egypt, my background has shaped my approach to innovative design. Based in [Your Location], I'm always open to new collaborations. Feel free to reach out!</p>
-      </div>
-    </section>
-    <section id="experience" aria-labelledby="experience-title">
-      <h2 id="experience-title">Experience</h2>
-      <div class="experience-list">
-        <div class="experience-item">
-          <h3>3D Phase Engineering Studio</h3>
-          <p>Founder & Lead Designer</p>
-          <p>2023 to Now — ~2 Years</p>
-        </div>
-      </div>
-    </section>
-    <section id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
-      <div class="projects-grid"></div>
-    </section>
-    <section id="contact" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact Me</h2>
-      <div class="direct-contact">
-        <p>Email: <a href="mailto:ahmedmohmedmesbah@gmail.com">ahmedmohmedmesbah@gmail.com</a></p>
-        <p>WhatsApp: <a href="https://wa.me/201002500273">+201002500273</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/ahmed-mohmedmesbah-b35901259">Profile</a></p>
-      </div>
-      <p class="privacy-note">Contact details are used solely to respond to inquiries.</p>
-    </section>
-  </main>
-  <footer>© 2025 3D Phase Engineering Studio — Ahmed Mesbah</footer>
-  <script src="script.js"></script>
+<body class="bg-background text-text font-sans antialiased">
+  <div id="root"></div>
+  <script type="text/babel" data-type="module" src="/index.tsx"></script>
 </body>
 </html>
